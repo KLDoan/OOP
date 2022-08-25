@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="user_input" type="text" placeholder="Celsius to Kelvin">
+    <button onclick="convert()">Convert</button>
+    <p id="result"></p>
+    <script>
+        //nhan gia tri celsius cua nguoi dung
+        let user_celsius
+        function convert() {
+            user_celsius = document.getElementById("user_input").value
+            console.log("celsius is " + user_celsius);
+            //
+            const temperature = new temp(user_celsius);
+            let tempConverse = temperature.getTemp();
+            console.log(tempConverse);
+            document.getElementById("result").innerText = tempConverse
+        }
+        // class nhiet do
+        class temp {
+            constructor(celsius) {
+                this.celsius = Number(user_celsius) // Celsius
+            }
+            getTemp() {
+                //0 °C = 273.15 K
+                return this.celsius + 273.15;
+            }
+        }
+    </script>
+</body>
+
+</html>
