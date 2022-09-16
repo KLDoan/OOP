@@ -3,44 +3,54 @@ class Apple {
         this.weight = 10
     }
     getWeight() {
+        console.log("apple weight is " + this.weight);
         return this.weight;
     }
+
 }
 const apple = new Apple()
 var appleWeight = apple.getWeight()
-//human
+// human
 class Human {
-    constructor(name, gender) {
-        this.name = name
-        this.gender = gender
-        this.weight = 0
+    constructor(name, gender,) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = 20
+
     }
     getName() {
-        return this.name
+        return this.name;
     }
     getGender() {
-        return this.gender;
+        console.log("my gender is " + this.gender);
     }
-    talk() {
-        console.log("Hello tao la ")
-    }
+
     eat() {
-        for (let i = 0; i < appleWeight; i++) {
-            apple.getWeight -= 1;
-            this.weight += 1;
-            return this.weight;
+        if (appleWeight > 0) {
+            this.weight++;
+            appleWeight--;
         }
     }
-    getHumanWeight() {
-        return this.weight;
+    say() {
+        console.log("hello my name is " + this.name);
     }
-    checkApple() {
-        return appleWeight;
+    getWeight() {
+        console.log(this.weight);
     }
 }
-const human = new Human("Adam", "male");
-let human_name = human.getName();
-let human_gender = human.getGender();
-let eatApple = human.eat();
-let human_weight = human.getHumanWeight();
-let checkAppleweight = human.checkApple();
+const Adam = new Human("Adam", "male");
+const Eva = new Human("Eva", "female")
+var say = Adam.say() + Adam.getGender() + Eva.say() + Eva.getGender()
+function AdamEat() {
+    let AdamEat = Adam.eat()
+    console.log("now weight is " + Adam.weight + " and apple weight is " + appleWeight)
+}
+function EvaEat() {
+    let EvaEat = Eva.eat()
+    console.log("now weight is " + Eva.weight + " and apple weight is " + appleWeight)
+
+
+}
+
+
+
